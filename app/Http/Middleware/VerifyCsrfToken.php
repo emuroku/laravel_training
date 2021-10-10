@@ -12,6 +12,8 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        //
+        // 例外処理を行う送信先を指定
+        'hello',
+
     ];
 }
