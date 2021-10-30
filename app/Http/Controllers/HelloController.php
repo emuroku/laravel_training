@@ -8,24 +8,22 @@ use Symfony\Component\Mime\Encoder\ContentEncoderInterface;
 use App\Http\Requests\HelloRequest;
 use Validator;
 
+use Illuminate\Support\Facades\DB; // DBクラスの利用
+
+
 class HelloController extends Controller
 {
     public function index(Request $request){
 
-        $validator = Validator::make($request->query(),[
-            'id' => 'required',
-            'pass' => 'required',
-        ]);
-
-        if($validator->fails()){
-            $msg = 'クエリに問題があります';
+        if(isset($request->id)){
+            $param = ['id'=>$request->id];
+            $items = DB::select('select * from people where id = :id',
+            $param);
         }else{
-            $msg = 'ID/PASSを受け付けました。フォームを入力してください';
+            $items = DB::select('select * from people');
         }
-
-        return view('hello.index', ['msg'=>$msg]);
+        return view('hello.index', ['items'=>$items]);
     }
-
     public function post(Request $request){
         
        // バリデーションのルール配列を設定
