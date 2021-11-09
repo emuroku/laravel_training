@@ -21,6 +21,11 @@
         </tr>
     @endforeach
     </table>        
+=======
+
+            </tr>
+        @endforeach
+    </table>                
 @endsection
 
 
