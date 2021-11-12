@@ -20,12 +20,7 @@
             <td>{{$item->age}}</td>
         </tr>
     @endforeach
-    </table>        
-=======
-
-            </tr>
-        @endforeach
-    </table>                
+    </table>                      
 @endsection
 
 
