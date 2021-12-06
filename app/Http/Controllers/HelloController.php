@@ -92,9 +92,12 @@ class HelloController extends Controller
 
     public function show(Request $request){
 
-        $id = $request->id;
-        $items = DB::table('people')->where('id', '<=', $id)->get();
-        return view('hello.show', ['items' => $items]);
+        $name = $request -> name;
+        $items = DB::table('people')
+            ->where('name', 'like', '%' . $name . '%')
+            ->orWhere('mail', 'like', '%' . $name . '%')
+            ->get();
+        return view('hello.show', ['items' => $items]);    
     }
 >>>>>>> 4f53cac (演算子を使ったれコードの検索処理を追加 #10)
 }
