@@ -77,7 +77,11 @@ class HelloController extends Controller
         DB::delete('delete from people where id = :id', $param);
         
         return redirect('/hello');
+<<<<<<< HEAD
 
     }
 
+=======
+    }    
+>>>>>>> e766812 (余計な記述を削除 #10)
 }
