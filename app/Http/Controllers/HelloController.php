@@ -16,7 +16,10 @@ class HelloController extends Controller
 
         $items = DB::table('people')->get();
         return view('hello.index', ['items' => $items]);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4f53cac (演算子を使ったれコードの検索処理を追加 #10)
     }
 
     public function post(Request $request){
@@ -83,5 +86,15 @@ class HelloController extends Controller
 
 =======
     }    
+<<<<<<< HEAD
 >>>>>>> e766812 (余計な記述を削除 #10)
+=======
+
+    public function show(Request $request){
+
+        $id = $request->id;
+        $items = DB::table('people')->where('id', '<=', $id)->get();
+        return view('hello.show', ['items' => $items]);
+    }
+>>>>>>> 4f53cac (演算子を使ったれコードの検索処理を追加 #10)
 }
