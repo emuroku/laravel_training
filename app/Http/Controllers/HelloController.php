@@ -77,7 +77,4 @@ class HelloController extends Controller
         DB::delete('delete from people where id = :id', $param);
         
         return redirect('/hello');
-
-    }
-
 }
