@@ -20,9 +20,5 @@
             <td>{{$item->age}}</td>
         </tr>
     @endforeach
-<<<<<<< HEAD
-    </table>                      
-=======
     </table>                     
->>>>>>> e766812 (余計な記述を削除 #10)
 @endsection
