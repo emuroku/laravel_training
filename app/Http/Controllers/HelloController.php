@@ -74,6 +74,7 @@ class HelloController extends Controller
             ->where('id', $request->id)->delete();
         
         return redirect('/hello');
+
     }
 
 
@@ -87,4 +88,5 @@ class HelloController extends Controller
             ->get();
         return view('hello.show', ['items'=>$items]);
     }
+
 }
